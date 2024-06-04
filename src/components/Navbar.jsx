@@ -13,7 +13,7 @@ const Navbar = () => {
         setIsSticky(true);
         else
         setIsSticky(false);
-      console.log(window.scrollY,isSticky)
+      // console.log(window.scrollY,isSticky)
     }
     window.addEventListener('scroll',handleScroll);
     return ()=>{
@@ -61,7 +61,7 @@ const Navbar = () => {
               <ul>
               {navItems.map(({link,path},id)=>(
                 <li key={id}>
-                  <Link to={path} spy="true" smooth="true" offset={-100} key={path} className='block text-base text-white hover:text-black first:font-medium'>{link}</Link>
+                  <Link to={path} spy="true" smooth="true" offset={-100} key={path} className='block cursor-pointer text-base text-white hover:text-black first:font-medium'>{link}</Link>
                 </li>
               ))}
               </ul>
