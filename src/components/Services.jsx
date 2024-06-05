@@ -13,7 +13,7 @@ const Services = () => {
         {id:3,title:"Free sappling",description:"Each sappling will be planted on your visit in our plantation",image:img3}
     ]
   return (
-    <div id='services' className='md:px-14 px-4 py-16 max-w-screen-2xl mx-auto'>
+    <div className='md:px-14 px-4 py-16 max-w-screen-2xl mx-auto' id="service">
         <div className='text-center my-8'>
             <h2 className='text-4xl text-neutralDGrey font-semibold mb-2'>Our categories</h2>
             <p className='text-neutralDGrey'>Providing 15+ categories</p>

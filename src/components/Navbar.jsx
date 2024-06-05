@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
-import { Link, BrowserRouter as Router } from 'react-router-dom'; 
+// import { Link, BrowserRouter as Router } from 'react-router-dom'; 
 import { FaXmark,FaBars } from 'react-icons/fa6';
+import { Link } from 'react-scroll';
 const Navbar = () => {
   const [isMenuOpen,setIsMenuOpen]=useState(false);
   const[isSticky,setIsSticky]=useState(false)
@@ -30,7 +31,7 @@ const Navbar = () => {
   ]
   return (
     <header className='w-full bg-white md:bg-transparent fixed top-0 left-0 right-0'>  
-        <Router >
+        < >
           <div className={`py-4 lg:px-14 px-4 ${isSticky ? "sticky top-0 left-0 right-0 border bg-white duration-300" : ""}`}>
             <div className='flex justify-between items-center text-base gap-8'>
                 <Link to={'/'} className='text-2xl font-semibold flex items-center space-x-3'>
@@ -40,9 +41,14 @@ const Navbar = () => {
                 </Link>
                 <ul className='md:flex space-x-12 hidden'>
                     {navItems.map(({link,path},id)=>(
-                          <li key={id}>
-                            <Link to={path} spy="true" smooth="true" offset={-100} key={path} className='block text-base text-gray900 hover:text-brandPrimary first:font-medium'>{link}</Link>
-                          </li>
+                          // <li key={id}>
+                        //   <a href={path} key={link} className='hover:text-orange transition'>
+                        //   {link}
+                        // </a>
+                        <Link to={path} spy={true} smooth={true} offset={-100} key={path} className='block text-base text-gray900 hover:text-brandPrimary first:font-medium cursor-pointer'>{link}</Link>
+                          
+                            // <Link to={path} spy="true" smooth="true" offset={-100} key={path} className='block text-base text-gray900 hover:text-brandPrimary first:font-medium'>{link}</Link>
+                          // </li>
                     ))}
                 </ul>
                 <div className='space-x-12 hidden lg:flex items-center'>
@@ -61,13 +67,13 @@ const Navbar = () => {
               <ul>
               {navItems.map(({link,path},id)=>(
                 <li key={id}>
-                  <Link to={path} spy="true" smooth="true" offset={-100} key={path} className='block cursor-pointer text-base text-white hover:text-black first:font-medium'>{link}</Link>
+                  <Link to={path} spy={true} smooth={true} offset={-100} key={path} className='block text-base text-white hover:text-black first:font-medium cursor-pointer'>{link}</Link>
                 </li>
               ))}
               </ul>
             </div>
             </div>
-        </Router>
+        </>
 
     </header>
   )
